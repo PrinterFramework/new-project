@@ -1,9 +1,10 @@
-export const password = '688e0189aa0927909e6ad29fe41835982fbb2a896cb4600e4bc795a3c8a68258';
+export const password =
+  '5b66d6ca8e68642133c5d96807041cf4af4b04dff7926b5f145b77dad2f94c1d'
 
 export const Session = {
   cookieName: 'printer',
   password,
   cookieOptions: {
-    secure: process.env.NODE_ENV === 'production',
-  },
+    secure: process.env.NODE_ENV === 'production'
+  }
 }
