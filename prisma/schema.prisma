@@ -11,14 +11,14 @@ datasource db {
 model Account {
   id          String   @id @default(uuid()) @db.Char(36)
   username    String   @unique @db.VarChar(128)
-  posts       Posts[]
+  posts       Post[]
   dateCreated DateTime @default(now())
   dateUpdated DateTime @updatedAt
 
   @@index(dateCreated)
 }
 
-model Posts {
+model Post {
   id          String   @id @default(uuid()) @db.Char(36)
   accountId   String   @db.VarChar(128)
   title       String   @db.VarChar(256)
