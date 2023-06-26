@@ -3,7 +3,7 @@ import { getIronSession, createResponse } from 'iron-session'
 
 export const password =
   process.env.SESSION_SECRET ||
-  '5b66d6ca8e68642133c5d96807041cf4af4b04dff7926b5f145b77dad2f94c1d'
+  'ad75fbbbddbf8005cb60e3089d6f156440f9c8ac1d13ad33a8e4758fdff73ff8'
 
 export interface SessionI {
   counter?: number
