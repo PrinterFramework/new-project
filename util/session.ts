@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { getIronSession, createResponse } from 'iron-session'
+import { getIronSession } from 'iron-session'
+import { cookies } from 'next/headers'
 
 export const password =
   process.env.SESSION_SECRET ||
@@ -9,8 +9,8 @@ export interface SessionI {
   counter?: number
 }
 
-export function getSession(req: NextRequest, res: NextResponse) {
-  return getIronSession<SessionI>(req, res, {
+export function getSession() {
+  return getIronSession<SessionI>(cookies(), {
     password,
     cookieName: 'printer',
     cookieOptions: {
@@ -21,5 +21,3 @@ export function getSession(req: NextRequest, res: NextResponse) {
     }
   })
 }
-
-export { createResponse }
