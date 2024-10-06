@@ -1,12 +1,11 @@
 import 'scss/printer.scss'
-import { Metadata } from 'next'
-import { ReactNode, Suspense } from 'react'
-import { ReduxProvider } from 'redux/provider'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+import { Suspense } from 'react'
+import { GenerateMetadata } from 'util/metadata'
+import { ReduxProvider } from '@redux/provider'
 
-export const metadata: Metadata = {
-  title: 'Printer',
-  description: 'Automation Tooling for Next, Redux and Prisma'
-}
+export const metadata: Metadata = GenerateMetadata({})
 
 export interface LayoutI {
   children: ReactNode

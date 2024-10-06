@@ -1,0 +1,110 @@
+@import "/scss/theme";
+
+@mixin input-generic() {
+  width: auto;
+  height: $component-height;
+  padding: 0 $component-padding;
+  border: 1px solid transparent;
+  border-radius: $component-radius;
+  background: lighten($background, $component-shader);
+  color: $foreground;
+  @include transition(border);
+
+  &:focus {
+    border: 1px solid $primary;
+  }
+
+  &.input-outline {
+    border: 1px solid $foreground;
+    background: transparent;
+
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+
+  &.input-underline {
+    background: transparent;
+    border-bottom: 1px solid $foreground;
+
+    &:focus {
+      border: 1px solid transparent;
+      border-bottom: 1px solid $primary;
+    }
+  }
+
+  &.input-blank {
+    border: 1px solid transparent;
+    background: transparent;
+  }
+
+  &:disabled,
+  &.input-loading,
+  &.input-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+@mixin input-style($color: $primary) {
+  border: 1px solid $color;
+
+  &::placeholder {
+    color: lighten($color, $component-shader);
+  }
+
+  &:focus {
+    border: 1px solid lighten($color, $component-shader);
+    color: $color;
+  }
+
+  &.input-outline {
+    border: 1px solid $color;
+    background: transparent;
+
+    &:focus {
+      border: 1px solid lighten($color, $component-shader);
+    }
+  }
+
+  &.input-underline {
+    border: 1px solid transparent;
+    background: transparent;
+    border-bottom: 1px solid $color;
+
+    &:focus {
+      border: 1px solid transparent;
+      border-bottom: 1px solid lighten($color, $component-shader);
+    }
+  }
+
+  &.input-blank {
+    border: 1px solid transparent;
+    background: transparent;
+    color: $color;
+  }
+}
+
+input {
+  @include input-generic;
+
+  &.input-primary {
+    @include input-style($primary);
+  }
+
+  &.input-secondary {
+    @include input-style($secondary);
+  }
+
+  &.input-red {
+    @include input-style($red);
+  }
+
+  &.input-yellow {
+    @include input-style($yellow);
+  }
+
+  &.input-green {
+    @include input-style($green);
+  }
+}

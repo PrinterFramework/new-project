@@ -1,0 +1,130 @@
+@import "/scss/theme";
+
+@mixin button-generic() {
+  position: relative;
+  width: auto;
+  height: $component-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 $component-padding;
+  border: none;
+  border-radius: $component-radius;
+  background: $primary;
+  color: $foreground;
+  cursor: pointer;
+  font-family: $body-font;
+  text-decoration: none;
+  @include transition;
+
+  &:hover {
+    background: lighten($primary, $component-shader);
+  }
+
+  &.active,
+  &:active {
+    background: lighten($primary, $component-shader * 1.5);
+  }
+
+  &.button-outline {
+    border: 2px solid $primary;
+    background: transparent;
+    color: $primary;
+
+    &:hover {
+      background: $primary;
+      color: $foreground;
+    }
+  }
+
+  &.button-blank {
+    background: transparent;
+    color: $primary;
+
+    &:hover {
+      background: $primary;
+      color: $foreground;
+    }
+  }
+
+  &:disabled,
+  &.button-loading,
+  &.button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  svg.icon,
+  img.icon {
+    margin: 0 ($component-padding / 2) 0 0;
+  }
+}
+
+@mixin button-style($color: $primary) {
+  background: $color;
+
+  &:hover {
+    background: lighten($color, $component-shader);
+  }
+
+  &.active,
+  &:active {
+    background: lighten($color, $component-shader * 1.5);
+  }
+
+  &.button-outline {
+    border: 2px solid $color;
+    background: transparent;
+    color: $color;
+
+    &:hover {
+      background: $color;
+      color: $foreground;
+    }
+
+    &.active,
+    &:active {
+      background: lighten($color, $component-shader * 1.5);
+    }
+  }
+
+  &.button-blank {
+    background: transparent;
+    color: $color;
+
+    &:hover {
+      background: $color;
+      color: $foreground;
+    }
+
+    &.active,
+    &:active {
+      background: lighten($color, $component-shader * 1.5);
+    }
+  }
+}
+
+a.button,
+button {
+  @include button-generic;
+
+  &.button-primary {
+    @include button-style($primary);
+  }
+
+  &.button-secondary {
+    @include button-style($secondary);
+  }
+
+  &.button-red {
+    @include button-style($red);
+  }
+
+  &.button-yellow {
+    @include button-style($yellow);
+  }
+
+  &.button-green {
+    @include button-style($green);
+  }
+}

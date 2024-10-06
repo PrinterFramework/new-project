@@ -1,10 +1,10 @@
-import { configureStore, type ThunkAction, type Action } from '@reduxjs/toolkit'
 import {
-  useSelector as useReduxSelector,
+  type TypedUseSelectorHook,
   useDispatch as useReduxDispatch,
-  type TypedUseSelectorHook
+  useSelector as useReduxSelector
 } from 'react-redux'
-import { reducer } from 'redux/reducer'
+import { reducer } from '@redux/reducer'
+import { type Action, configureStore, type ThunkAction } from '@reduxjs/toolkit'
 
 export const reduxStore = configureStore({
   reducer,

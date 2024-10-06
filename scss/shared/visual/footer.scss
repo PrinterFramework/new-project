@@ -1,0 +1,22 @@
+@import "/scss/theme";
+
+@mixin footer-generic() {
+  @include background-navigation;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $component-padding;
+  border-radius: $component-radius * 3;
+
+  @media (width <= 640px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+footer,
+div.footer,
+section.footer {
+  @include footer-generic;
+}

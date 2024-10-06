@@ -1,0 +1,21 @@
+@import "/scss/theme";
+
+div.demo-counter {
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0 0 15px;
+    text-align: center;
+  }
+
+  div.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin: $component-padding / 2;
+    }
+  }
+}

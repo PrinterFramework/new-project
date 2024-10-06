@@ -1,37 +1,51 @@
-# Printer Template
+# Just Print It, Project Template
 
-## Commands
+If you want to start developing with Printer. Head over to the [Workstation](https://workstation.justprintit.ai).
 
-### `yarn dev`
+If you are new to Printer review the docs [Printer Documentation](https://justprintit.ai/docs).
 
-Start the dev server on `http://localhost:4200`.
+You should fork, clone or copy this template to start a new project. The Printer Workstation will work with a different project structure and style. However, Printer works best using a structure similar to this template.
 
-### `yarn build`
+## Overview
 
-Build the Next.js output in `dist`.
+I recommend using [bun.sh](https://bun.sh/) for commands. Here's a quick overview of features.
 
-### `yarn start`
+```bash
+# Start the next dev server on port 4200
+bun run dev
 
-Start a production server on `http://localhost:3000`.
+# Build the next bundle in `.next`
+bun run build
 
-### `yarn lint` | `yarn lint --fix`
+# Start the next production server
+bun run start
 
-Runs `eslint` on the project and cleans up any style issues.
+# Lint and fix style issues
+bun run lint
 
-### `yarn scss`
+# Lint the typescript and autofix any issue if possible
+bun run lint:node --fix
 
-Creates a debug `printer.css` file to review build outputs.
+# Lint the SCSS and autifix any issue if possible
+bun run lint:style --fix
 
-### `yarn prisma`
+# Generate the prisma client
+bun run prisma
 
-Creates the `prisma` client.
+# Generate the prisma client and push changes
+bun run prisma:update
+```
 
-### `yarn prisma:update`
+## Printer Legacy
 
-Creates the `prisma` client and then pushes schema updates to the database.
+Note that the new project template has been overhauled since Printer. If you want to view the legacy v1 and v2 versions of the new project template. Take a look at the following commit checkpoints:
 
-## Documentation
+[Printer V2 - v2.2.5](https://github.com/PrinterFramework/new-project/tree/f8cf4283a71c0d46ba7f44728f300c9c63592a12)
 
-Review the documentation on [prntr.click/docs](https://prntr.click/docs).
+[Printer V1 - v1.30](https://github.com/PrinterFramework/new-project/tree/1bca5ac2c171eeb625ca12374437a295b8310b48)
 
-Review the [CHANGELOG](https://github.com/PrinterFramework/CLI/blob/master/CHANGELOG.md) for any updates made to the project.
+You can also view the legacy websites too:
+
+[Printer V2 - Website](https://prntr.click)
+
+[Printer V1 - Website](https://v1.prntr.click)
