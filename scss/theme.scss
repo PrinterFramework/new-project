@@ -1,15 +1,47 @@
-$header-font: 'Oswald';
-$body-font: 'Montserrat';
-
-$primary: #C49A0F;
-$primary-light: #F2D577;
-
+$header-font: "Kode Mono", monospace;
+$body-font: "Kode Mono", monospace;
+$background: #292929;
+$foreground: #fcfcfc;
+$background: #020c12;
+$foreground: #fcfcfc;
+$primary: #ba7616;
+$secondary: #f1be18;
+$red: #e9524a;
+$yellow: #f1ae1b;
+$green: #59c837;
+$navigation-width: 320px;
+$page-height: calc(100vh - 72px);
 $container-width: 1268px;
-$page-height: 100vh;
+$component-height: 42px;
+$component-padding: 15px; // Use $component-padding for margin too.
+$component-radius: 3px;
+$component-shader: 10%;
+$component-border-color: lighten($background, $component-shader * 2.5);
+$component-border: 1px solid $component-border-color;
 
-@mixin bg-gradient() {
-  background: rgb(41, 41, 41);
-  background: radial-gradient(circle, rgba(41, 41, 41, 1) 0%, rgba(29, 29, 29, 1) 100%);
+@mixin background() {
+  background: #020c12;
+  background: radial-gradient(circle, rgb(6 22 35) 0%, rgb(5 28 40 / 100%) 100%);
+}
+
+@mixin background-alt() {
+  background: #082536;
+  background: radial-gradient(circle, rgb(13 45 72 / 90%) 0%, rgb(8 37 59 / 90%) 100%),
+    radial-gradient(circle at top, rgb(255 255 255 / 10%) 0%, transparent 70%),
+    radial-gradient(circle at bottom, rgb(0 0 0 / 15%) 0%, transparent 50%);
+}
+
+@mixin background-navigation() {
+  background: #041a28;
+  background: radial-gradient(circle, rgb(10 35 56 / 90%) 0%, rgb(11 44 67 / 90%) 100%),
+    radial-gradient(circle at bottom, rgb(0 0 0 / 15%) 0%, transparent 50%);
+}
+
+@mixin background-panel() {
+  background: #03121c;
+  background: radial-gradient(circle, rgb(21 63 97 / 90%) 0%, rgb(15 54 84 / 90%) 100%),
+    radial-gradient(circle at top, rgb(27 72 108 / 10%) 0%, transparent 70%),
+    radial-gradient(circle at bottom, rgb(21 63 97 / 80%) 0%, transparent 50%);
 }
 
 @mixin transition($property: all, $duration: 0.25s) {

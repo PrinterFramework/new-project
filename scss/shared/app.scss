@@ -1,0 +1,90 @@
+@import "/scss/theme";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $foreground;
+  font-family: $body-font;
+  overflow-x: hidden;
+
+  @include background;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+a {
+  color: $primary;
+  cursor: pointer;
+
+  &:hover {
+    color: lighten($primary, $component-shader);
+  }
+
+  &:active {
+    color: lighten($primary, $component-shader * 1.5);
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+}
+
+section.container,
+div.container {
+  width: 100%;
+  margin: auto;
+  max-width: $container-width;
+
+  &.page {
+    min-height: $page-height;
+  }
+
+  &.flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+img.icon-spinner,
+svg.icon-spinner {
+  transform-origin: center;
+  animation: spin 4s linear infinite;
+}

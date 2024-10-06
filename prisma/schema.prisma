@@ -3,30 +3,32 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
+  provider     = "sqlite"
   url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
 model Account {
-  id          String   @id @default(uuid()) @db.Char(36)
-  username    String   @unique @db.VarChar(128)
+  id          String   @id @default(uuid())
+  username    String   @unique
   posts       Post[]
   dateCreated DateTime @default(now())
   dateUpdated DateTime @updatedAt
 
   @@index(dateCreated)
+  @@index(dateUpdated)
 }
 
 model Post {
-  id          String   @id @default(uuid()) @db.Char(36)
-  accountId   String   @db.VarChar(128)
-  title       String   @db.VarChar(256)
-  content     String   @db.Text()
+  id          String   @id @default(uuid())
+  accountId   String
+  title       String
+  content     String
   account     Account  @relation(fields: accountId, references: id)
   dateCreated DateTime @default(now())
   dateUpdated DateTime @updatedAt
 
   @@index(accountId)
   @@index(dateCreated)
+  @@index(dateUpdated)
 }

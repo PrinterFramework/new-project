@@ -1,0 +1,40 @@
+@import "/scss/theme";
+
+@mixin card-generic() {
+  padding: 0;
+
+  div.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: $component-padding;
+    border-bottom: $component-border;
+
+    button {
+      height: $component-height * 0.75;
+    }
+  }
+
+  div.card-content {
+    padding: $component-padding;
+  }
+
+  div.card-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: $component-padding;
+    border-top: $component-border;
+
+    a,
+    button {
+      height: $component-height * 0.75;
+      margin-left: $component-padding;
+    }
+  }
+}
+
+div.card {
+  @include panel-generic;
+  @include card-generic;
+}

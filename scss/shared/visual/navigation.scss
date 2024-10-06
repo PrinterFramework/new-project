@@ -1,0 +1,16 @@
+@import "/scss/theme";
+
+nav {
+  @include panel-generic;
+
+  h3 {
+    text-align: center;
+  }
+
+  button,
+  a.button {
+    width: 100%;
+    margin: $component-padding 0;
+    font-size: 16px;
+  }
+}

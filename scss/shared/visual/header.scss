@@ -1,0 +1,50 @@
+@import "/scss/theme";
+
+@mixin header-generic() {
+  @include background-navigation;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $component-padding;
+  border-radius: $component-radius * 3;
+
+  &.header-primary {
+    background: $primary;
+  }
+
+  &.header-secondary {
+    background: $secondary;
+  }
+
+  div.header-menu,
+  nav {
+    display: flex;
+
+    a.button,
+    button {
+      font-size: 14px;
+      margin: 0 0 0 $component-padding;
+    }
+  }
+
+  @media (width <= 640px) {
+    flex-direction: column;
+    justify-content: center;
+
+    div.header-menu {
+      padding-top: $component-padding;
+
+      a.button,
+      button {
+        margin: 0 $component-padding / 2;
+      }
+    }
+  }
+}
+
+header,
+div.header,
+section.header {
+  @include header-generic;
+}

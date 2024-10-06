@@ -1,0 +1,53 @@
+@import "/scss/theme";
+
+@mixin textarea-generic() {
+  width: auto;
+  height: auto;
+  padding: $component-padding;
+  border: 1px solid transparent;
+  border-radius: $component-radius;
+  background: lighten($background, $component-shader);
+  color: $foreground;
+  resize: none;
+  overflow: hidden;
+  @include transition(border);
+
+  &:focus {
+    border: 1px solid $primary;
+  }
+
+  &.textarea-outline {
+    border: 1px solid $foreground;
+    background: transparent;
+
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+
+  &.textarea-underline {
+    background: transparent;
+    border-bottom: 1px solid $foreground;
+
+    &:focus {
+      border: 1px solid transparent;
+      border-bottom: 1px solid $primary;
+    }
+  }
+
+  &.textarea-blank {
+    border: 1px solid transparent;
+    background: transparent;
+  }
+
+  &:disabled,
+  &.textarea-loading,
+  &.textarea-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+textarea {
+  @include textarea-generic;
+}

@@ -1,0 +1,32 @@
+@import "/scss/theme";
+
+@mixin form-generic() {
+  width: 100%;
+  height: auto;
+  padding: $component-padding;
+
+  h2,
+  h3 {
+    font-weight: 300;
+    padding: 0 0 $component-padding;
+  }
+
+  label,
+  p.label {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  input,
+  textarea,
+  select,
+  button,
+  a.button {
+    width: 100%;
+    margin: 0 0 $component-padding;
+  }
+}
+
+form {
+  @include form-generic;
+}

@@ -1,7 +1,7 @@
 'use client'
-import { ReactNode } from 'react'
-import { reduxStore } from 'redux/store'
+import type { ReactNode } from 'react'
 import { Provider } from 'react-redux'
+import { reduxStore } from '@redux/store'
 
 export interface ReduxProviderI {
   children: ReactNode
