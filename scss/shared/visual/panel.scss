@@ -1,0 +1,17 @@
+@import "/scss/theme";
+
+@mixin panel-generic() {
+  width: 100%;
+  height: auto;
+  padding: $component-padding;
+  border: 1px solid transparent;
+  border-radius: $component-radius * 3;
+  color: $foreground;
+  @include background-panel;
+}
+
+div.panel,
+section.panel,
+form.panel {
+  @include panel-generic;
+}

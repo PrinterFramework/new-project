@@ -1,0 +1,113 @@
+@import "/scss/theme";
+
+@mixin select-generic() {
+  appearance: none;
+  width: auto;
+  min-width: 180px;
+  height: $component-height;
+  padding: 0 $component-padding;
+  border: 1px solid transparent;
+  border-radius: $component-radius;
+  background: lighten($background, $component-shader);
+  color: $foreground;
+  @include transition;
+
+  &:focus {
+    border: 1px solid $primary;
+  }
+
+  &.select-outline {
+    border: 1px solid $foreground;
+    background: transparent;
+
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+
+  &.select-underline {
+    background: transparent;
+    border-bottom: 1px solid $foreground;
+
+    &:focus {
+      border: 1px solid transparent;
+      border-bottom: 1px solid $primary;
+    }
+  }
+
+  &.select-blank {
+    border: 1px solid transparent;
+    background: transparent;
+  }
+
+  &:disabled,
+  &.select-loading,
+  &.select-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+@mixin select-style($color: $primary) {
+  border: 1px solid $color;
+  color: $color;
+
+  &::placeholder {
+    color: lighten($color, $component-shader);
+  }
+
+  &:focus {
+    border: 1px solid lighten($color, $component-shader);
+    color: $color;
+  }
+
+  &.select-outline {
+    border: 1px solid $color;
+    background: transparent;
+
+    &:focus {
+      border: 1px solid lighten($color, $component-shader);
+    }
+  }
+
+  &.select-underline {
+    border: 1px solid transparent;
+    background: transparent;
+    border-bottom: 1px solid $color;
+
+    &:focus {
+      border: 1px solid transparent;
+      border-bottom: 1px solid lighten($color, $component-shader);
+    }
+  }
+
+  &.select-blank {
+    border: 1px solid transparent;
+    background: transparent;
+    color: $color;
+  }
+}
+
+select {
+  @include select-generic;
+
+  &.select-primary {
+    @include select-style($primary);
+  }
+
+  &.select-secondary {
+    @include select-style($secondary);
+  }
+
+  &.select-red {
+    @include select-style($red);
+  }
+
+  &.select-yellow {
+    @include select-style($yellow);
+  }
+
+  &.select-green {
+    @include select-style($green);
+  }
+}

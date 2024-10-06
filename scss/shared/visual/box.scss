@@ -1,0 +1,34 @@
+@import "/scss/theme";
+
+div.box {
+  width: 100%;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $component-radius;
+  background: $primary;
+  color: $foreground;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 700;
+
+  &.red {
+    background: $red;
+  }
+
+  &.yellow {
+    background: $yellow;
+  }
+
+  &.green {
+    background: $green;
+  }
+
+  @include transition(height);
+
+  &.box-active {
+    height: $component-height;
+    margin: 15px 0 0;
+  }
+}

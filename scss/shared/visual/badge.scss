@@ -1,0 +1,36 @@
+@import "/scss/theme";
+
+@mixin badge-generic($bg, $fg) {
+  padding: $component-padding / 3 $component-padding;
+  border-radius: $component-radius;
+  background: $bg;
+  color: $fg;
+
+  &.badge-outline {
+    border: 2px solid $bg;
+    background: transparent;
+    color: $bg;
+  }
+}
+
+div.badge,
+span.badge,
+a.badge {
+  @include badge-generic($primary, $foreground);
+
+  &.badge-secondary {
+    @include badge-generic($secondary, $foreground);
+  }
+
+  &.badge-green {
+    @include badge-generic($green, $foreground);
+  }
+
+  &.badge-yellow {
+    @include badge-generic($yellow, $foreground);
+  }
+
+  &.badge-red {
+    @include badge-generic($red, $foreground);
+  }
+}

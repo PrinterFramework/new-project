@@ -1,0 +1,91 @@
+@import "/scss/theme";
+
+@mixin table-generic() {
+  width: 100%;
+
+  thead {
+    background: $primary;
+    font-weight: 700;
+  }
+
+  tr {
+    td {
+      height: $component-height;
+      padding: $component-padding / 2 $component-padding;
+
+      @media (width <= 640px) {
+        display: block;
+      }
+    }
+  }
+}
+
+table {
+  @include table-generic;
+}
+
+@mixin table-div-generic() {
+  width: 100%;
+
+  div.table-row,
+  section.table-row {
+    width: 100%;
+    height: $component-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(even) {
+      background: rgb(256 256 256 / 5%);
+    }
+
+    @media (width <= 640px) {
+      flex-flow: column wrap;
+      height: auto;
+      justify-content: flex-start;
+    }
+  }
+
+  div.table-row-header,
+  section.table-row-header {
+    background: $primary;
+    font-weight: 700;
+  }
+
+  div.table-column {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 $component-padding;
+
+    @media (width <= 640px) {
+      width: 100%;
+      padding: $component-padding / 2;
+    }
+  }
+}
+
+div.table,
+section.table {
+  @include table-div-generic;
+}
+
+@mixin table-div-stylish() {
+  div.table-row {
+    margin: 0 0 $component-padding / 2 0;
+    border-radius: $component-height / 2;
+    background: rgb(0 0 0 / 25%);
+  }
+
+  div.table-row-header,
+  section.table-row-header {
+    background: $primary;
+    font-weight: 700;
+  }
+}
+
+div.table-stylish,
+section.table-stylish {
+  @include table-div-stylish;
+}
