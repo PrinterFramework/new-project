@@ -9,8 +9,8 @@ export interface SessionInterface {
   counter?: number
 }
 
-export function getSession() {
-  return getIronSession<SessionInterface>(cookies(), {
+export async function getSession() {
+  return getIronSession<SessionInterface>(await cookies(), {
     password,
     cookieName: 'printer',
     cookieOptions: {

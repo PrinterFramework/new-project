@@ -1,7 +1,7 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 div.demo-splash {
-  margin: 0 0 ($component-padding * 2);
+  margin: 0 0 calc($component-padding * 2);
 
   div.demo-splash-brand {
     display: flex;

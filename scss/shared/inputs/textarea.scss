@@ -1,4 +1,5 @@
-@import "/scss/theme";
+@use "sass:color" as color;
+@use "/scss/theme" as *;
 
 @mixin textarea-generic() {
   width: auto;
@@ -6,7 +7,7 @@
   padding: $component-padding;
   border: 1px solid transparent;
   border-radius: $component-radius;
-  background: lighten($background, $component-shader);
+  background: color.adjust($background, $lightness: $component-shader);
   color: $foreground;
   resize: none;
   overflow: hidden;

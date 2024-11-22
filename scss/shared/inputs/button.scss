@@ -1,4 +1,5 @@
-@import "/scss/theme";
+@use "sass:color" as color;
+@use "/scss/theme" as *;
 
 @mixin button-generic() {
   position: relative;
@@ -18,12 +19,12 @@
   @include transition;
 
   &:hover {
-    background: lighten($primary, $component-shader);
+    background: color.adjust($primary, $lightness: $component-shader);
   }
 
   &.active,
   &:active {
-    background: lighten($primary, $component-shader * 1.5);
+    background: color.adjust($primary, $lightness: $component-shader * 1.5);
   }
 
   &.button-outline {
@@ -56,7 +57,7 @@
 
   svg.icon,
   img.icon {
-    margin: 0 ($component-padding / 2) 0 0;
+    margin: 0 calc($component-padding / 2) 0 0;
   }
 }
 
@@ -64,12 +65,12 @@
   background: $color;
 
   &:hover {
-    background: lighten($color, $component-shader);
+    background: color.adjust($color, $lightness: $component-shader);
   }
 
   &.active,
   &:active {
-    background: lighten($color, $component-shader * 1.5);
+    background: color.adjust($color, $lightness: $component-shader * 1.5);
   }
 
   &.button-outline {
@@ -84,7 +85,7 @@
 
     &.active,
     &:active {
-      background: lighten($color, $component-shader * 1.5);
+      background: color.adjust($color, $lightness: $component-shader * 1.5);
     }
   }
 
@@ -99,7 +100,7 @@
 
     &.active,
     &:active {
-      background: lighten($color, $component-shader * 1.5);
+      background: color.adjust($color, $lightness: $component-shader * 1.5);
     }
   }
 }

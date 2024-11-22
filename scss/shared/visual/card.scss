@@ -1,4 +1,5 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
+@use "/scss/shared/visual/panel" as *;
 
 @mixin card-generic() {
   padding: 0;
@@ -11,7 +12,7 @@
     border-bottom: $component-border;
 
     button {
-      height: $component-height * 0.75;
+      height: calc($component-height * 0.75);
     }
   }
 
@@ -28,7 +29,7 @@
 
     a,
     button {
-      height: $component-height * 0.75;
+      height: calc($component-height * 0.75);
       margin-left: $component-padding;
     }
   }

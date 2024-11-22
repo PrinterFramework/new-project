@@ -1,4 +1,4 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 div.box {
   width: 100%;
@@ -10,7 +10,6 @@ div.box {
   background: $primary;
   color: $foreground;
   overflow: hidden;
-  font-size: 14px;
   font-weight: 700;
 
   &.red {
@@ -29,6 +28,6 @@ div.box {
 
   &.box-active {
     height: $component-height;
-    margin: 15px 0 0;
+    margin: $component-padding 0 0;
   }
 }

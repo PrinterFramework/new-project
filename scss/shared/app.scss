@@ -1,4 +1,5 @@
-@import "/scss/theme";
+@use "sass:color" as color;
+@use "/scss/theme" as *;
 
 * {
   box-sizing: border-box;
@@ -44,11 +45,11 @@ a {
   cursor: pointer;
 
   &:hover {
-    color: lighten($primary, $component-shader);
+    color: color.adjust($primary, $lightness: $component-shader);
   }
 
   &:active {
-    color: lighten($primary, $component-shader * 1.5);
+    color: color.adjust($primary, $lightness: calc($component-shader * 1.5));
   }
 }
 

@@ -1,14 +1,14 @@
-@import "/scss/theme";
+@use "sass:color" as color;
+@use "/scss/theme" as *;
 
 @mixin select-generic() {
   appearance: none;
   width: auto;
-  min-width: 180px;
   height: $component-height;
   padding: 0 $component-padding;
   border: 1px solid transparent;
   border-radius: $component-radius;
-  background: lighten($background, $component-shader);
+  background: color.adjust($background, $lightness: $component-shader);
   color: $foreground;
   @include transition;
 
@@ -53,11 +53,11 @@
   color: $color;
 
   &::placeholder {
-    color: lighten($color, $component-shader);
+    color: color.adjust($color, $lightness: $component-shader);
   }
 
   &:focus {
-    border: 1px solid lighten($color, $component-shader);
+    border: 1px solid color.adjust($color, $lightness: $component-shader);
     color: $color;
   }
 
@@ -66,7 +66,7 @@
     background: transparent;
 
     &:focus {
-      border: 1px solid lighten($color, $component-shader);
+      border: 1px solid color.adjust($color, $lightness: $component-shader);
     }
   }
 
@@ -77,7 +77,7 @@
 
     &:focus {
       border: 1px solid transparent;
-      border-bottom: 1px solid lighten($color, $component-shader);
+      border-bottom: 1px solid color.adjust($color, $lightness: $component-shader);
     }
   }
 

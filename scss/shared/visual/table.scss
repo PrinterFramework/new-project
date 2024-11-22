@@ -1,4 +1,4 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 @mixin table-generic() {
   width: 100%;
@@ -11,7 +11,7 @@
   tr {
     td {
       height: $component-height;
-      padding: $component-padding / 2 $component-padding;
+      padding: calc($component-padding / 2) $component-padding;
 
       @media (width <= 640px) {
         display: block;
@@ -61,7 +61,7 @@ table {
 
     @media (width <= 640px) {
       width: 100%;
-      padding: $component-padding / 2;
+      padding: calc($component-padding / 2);
     }
   }
 }
@@ -73,8 +73,8 @@ section.table {
 
 @mixin table-div-stylish() {
   div.table-row {
-    margin: 0 0 $component-padding / 2 0;
-    border-radius: $component-height / 2;
+    margin: 0 0 calc($component-padding / 2) 0;
+    border-radius: calc($component-height / 2);
     background: rgb(0 0 0 / 25%);
   }
 

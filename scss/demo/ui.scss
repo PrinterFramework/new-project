@@ -1,4 +1,4 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 div.page-ui {
   padding: $component-padding;
@@ -49,7 +49,7 @@ div.page-ui {
   div.page-ui-dimensions-labels {
     display: flex;
     flex-wrap: wrap;
-    margin: -$component-padding;
+    margin: (-$component-padding);
 
     div.page-ui-dimensions-label {
       margin: $component-padding;
@@ -71,7 +71,7 @@ div.page-ui {
   div.page-ui-palettes {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -$component-padding;
+    margin: 0 (-$component-padding);
 
     div.page-ui-palette {
       width: 240px;

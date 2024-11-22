@@ -1,4 +1,4 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 div.demo-counter {
   h2 {
@@ -15,7 +15,7 @@ div.demo-counter {
     align-items: center;
 
     button {
-      margin: $component-padding / 2;
+      margin: calc($component-padding / 2);
     }
   }
 }

@@ -1,3 +1,5 @@
+@use "sass:color" as color;
+
 $header-font: "Kode Mono", monospace;
 $body-font: "Kode Mono", monospace;
 $background: #292929;
@@ -16,7 +18,7 @@ $component-height: 42px;
 $component-padding: 15px; // Use $component-padding for margin too.
 $component-radius: 3px;
 $component-shader: 10%;
-$component-border-color: lighten($background, $component-shader * 2.5);
+$component-border-color: color.adjust($background, $lightness: calc($component-shader * 2.5));
 $component-border: 1px solid $component-border-color;
 
 @mixin background() {

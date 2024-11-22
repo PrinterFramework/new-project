@@ -1,4 +1,4 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 @mixin header-generic() {
   @include background-navigation;
@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   padding: $component-padding;
-  border-radius: $component-radius * 3;
+  border-radius: calc($component-radius * 3);
 
   &.header-primary {
     background: $primary;
@@ -37,7 +37,7 @@
 
       a.button,
       button {
-        margin: 0 $component-padding / 2;
+        margin: 0 calc($component-padding / 2);
       }
     }
   }

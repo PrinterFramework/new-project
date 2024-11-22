@@ -1,7 +1,7 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 @mixin badge-generic($bg, $fg) {
-  padding: $component-padding / 3 $component-padding;
+  padding: calc($component-padding / 3) $component-padding;
   border-radius: $component-radius;
   background: $bg;
   color: $fg;

@@ -1,4 +1,4 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 @mixin footer-generic() {
   @include background-navigation;
@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   padding: $component-padding;
-  border-radius: $component-radius * 3;
+  border-radius: calc($component-radius * 3);
 
   @media (width <= 640px) {
     flex-direction: column;

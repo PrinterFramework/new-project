@@ -1,11 +1,11 @@
-@import "/scss/theme";
+@use "/scss/theme" as *;
 
 @mixin panel-generic() {
   width: 100%;
   height: auto;
   padding: $component-padding;
   border: 1px solid transparent;
-  border-radius: $component-radius * 3;
+  border-radius: calc($component-radius * 3);
   color: $foreground;
   @include background-panel;
 }
